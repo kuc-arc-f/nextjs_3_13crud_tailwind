@@ -1,0 +1,8 @@
+/* text */
+.input_text_gray{
+  @apply block w-full py-3 px-4  border border-gray-600 rounded leading-tight focus:border-gray-500;
+}
+/* textArea */
+.input_textarea_gray{
+  @apply block w-full border border-gray-600 rounded py-3 px-4 leading-tight focus:border-gray-500;
+}

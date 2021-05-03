@@ -1,0 +1,15 @@
+
+/* bgcolor */
+.myblog_bgcolor_main{
+  @apply bg-gray-400;
+}
+.myblog_bgcolor_sub{
+  @apply bg-gray-700;
+}
+.myblog_bgcolor_accent{
+  @apply bg-blue-400;
+}
+/* color */
+.myblog_color_accent{
+  @apply text-blue-400;
+}

@@ -1,0 +1,15 @@
+
+/* bgcolor */
+.myblog_bgcolor_main{
+  @apply bg-green-500;
+}
+.myblog_bgcolor_sub{
+  @apply bg-green-700;
+}
+.myblog_bgcolor_accent{
+  @apply bg-yellow-400;
+}
+/* color */
+.myblog_color_accent{
+  @apply text-yellow-400;
+}
