@@ -27,7 +27,7 @@ yarn dev
 ***
 ### sample URL
 
-https://jamstack-ex14.netlify.app/
+https://cms-kuc-jamstack-ex14.netlify.app/
 
 ***
 ### Blog :
