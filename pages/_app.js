@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+//import '../styles/globals.css'
 import '../styles/components/buttons.css'
 import '../styles/components/forms.css'
 //import '../styles/components/bgcolor.css'

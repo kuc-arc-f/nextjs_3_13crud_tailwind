@@ -1,43 +1,76 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import Container from '../components/container'
 import Layout from '../components/layout'
-import IndexRow from './IndexRow'
-import LibCommon from '../lib/LibCommon'
-import LibPagenate from '../lib/LibPagenate'
 
 export default function Index(data) {
-  var items = data.blogs
-  var json = data.json
-// console.log( items )    
   return (
-  <div className="bg-gray-100">
-    <Layout>
-      <div className="container mx-auto px-5 pb-5 bg-white">
-        <hr />
-        <h1 className="text-5xl font-bold my-2">Home</h1>
-        <p>This is home page.</p>
-      </div>
-    </Layout>
+  <div className="body_wrap d-flex text-center text-white bg-dark">
+    <Head>
+      <title>{process.env.MY_SITE_NAME}</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossOrigin="anonymous" />      
+      <link href="/css/cover.css" rel="stylesheet"></link>
+    </Head>    
+    <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header className="mb-auto">
+        <div>
+          <h3 className="float-md-start mb-0"></h3>
+          <nav className="nav nav-masthead justify-content-center float-md-end">
+            <a className="nav-link active" aria-current="page" href="/home">Home</a>
+            <a className="nav-link active" href="/about">About</a>
+            <a className="nav-link active" href="/license">License</a>
+          </nav>
+        </div>
+      </header>
+      <main className="px-3">
+        <h1>{process.env.MY_SITE_NAME}</h1>
+        <p className="lead">
+          {process.env.MY_SITE_INFO}
+        </p>
+        <p className="lead">
+          <a href="/home" className="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+        </p>
+      </main> 
+      <footer className="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" className="text-white">
+          Bootstrap 5</a></p>
+      </footer>           
+    </div>
+    <style global jsx>{`
+      html,
+      body,
+      body > div:first-child,
+      div#__next,
+      div#__next > div {
+        height: 100%;
+      }
+      body {
+        text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+        box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+      }      
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }      
+    `}</style>    
   </div>
   )
 }
 
 export async function getStaticProps() {
-//console.log(categories)
-/*
-  var url = process.env.BASE_URL+`/api/posts.php?page=1`
-  const res = await fetch( url );
-  var blogs = await res.json();
-  LibPagenate.init()
-  var display = LibPagenate.is_paging_display(blogs.length)      
-*/
   return {
     props : {
       blogs: [],
       site_name : process.env.MY_SITE_NAME,
-      info_text : "Sample CMSの関連記事を公開予定しております。",        
-//      display: display
+//      info_text : "CMSの関連記事を公開予定しております。",        
     }
   };
 }
